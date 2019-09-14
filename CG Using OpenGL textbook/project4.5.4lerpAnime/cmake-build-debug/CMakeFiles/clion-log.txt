@@ -1,0 +1,4 @@
+"F:\clion\CLion 2019.1.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" F:\project\project4.5.4lerpAnime
+-- Configuring done
+-- Generating done
+-- Build files have been written to: F:/project/project4.5.4lerpAnime/cmake-build-debug

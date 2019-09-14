@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+F:/project/project4.6.1circleByPoints/Coordinate.h
+GL/glut.h
+-
+
+F:/project/project4.6.1circleByPoints/main.cpp
+GL/glut.h
+-
+cstdio
+-
+cmath
+-
+Coordinate.h
+F:/project/project4.6.1circleByPoints/Coordinate.h
+

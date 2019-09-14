@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+F:/project/project6.2_3vnTest/SDL.cpp
+SDL.h
+F:/project/project6.2_3vnTest/SDL.h
+iostream
+-
+fstream
+-
+
+F:/project/project6.2_3vnTest/SDL.h
+cstdio
+-
+GL/gl.h
+-
+

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+F:/project/project5.6.3normalShape/main.cpp
+GL/freeglut.h
+-
+cstdio
+-
+cmath
+-
+ctime
+-
+

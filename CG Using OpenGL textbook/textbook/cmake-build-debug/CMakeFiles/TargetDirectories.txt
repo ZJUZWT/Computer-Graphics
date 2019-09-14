@@ -1,0 +1,3 @@
+F:/project/textbook/cmake-build-debug/CMakeFiles/textbook.dir
+F:/project/textbook/cmake-build-debug/CMakeFiles/edit_cache.dir
+F:/project/textbook/cmake-build-debug/CMakeFiles/rebuild_cache.dir

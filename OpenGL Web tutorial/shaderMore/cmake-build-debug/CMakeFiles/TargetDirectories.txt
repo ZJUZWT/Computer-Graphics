@@ -1,0 +1,3 @@
+F:/project/web learnopengl/shaderMore/cmake-build-debug/CMakeFiles/shaderMore.dir
+F:/project/web learnopengl/shaderMore/cmake-build-debug/CMakeFiles/edit_cache.dir
+F:/project/web learnopengl/shaderMore/cmake-build-debug/CMakeFiles/rebuild_cache.dir

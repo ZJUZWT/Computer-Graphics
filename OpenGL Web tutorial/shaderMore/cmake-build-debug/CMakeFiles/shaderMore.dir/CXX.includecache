@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+F:/project/web learnopengl/shaderMore/Shader.cpp
+Shader.h
+F:/project/web learnopengl/shaderMore/Shader.h
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+string
+-
+fstream
+-
+iostream
+-
+sstream
+-
+
+F:/project/web learnopengl/shaderMore/Shader.h
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+
+F:/project/web learnopengl/shaderMore/main.cpp
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+iostream
+-
+math.h
+-
+Shader.h
+F:/project/web learnopengl/shaderMore/Shader.h
+

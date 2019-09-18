@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+F:/project/web learnopengl/textrueTest/Shader.h
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+
+F:/project/web learnopengl/textrueTest/init.h
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+
+F:/project/web learnopengl/textrueTest/main.cpp
+stb_image.h
+-
+glad/glad.h
+-
+GLFW/glfw3.h
+-
+iostream
+-
+init.h
+F:/project/web learnopengl/textrueTest/init.h
+Shader.h
+F:/project/web learnopengl/textrueTest/Shader.h
+

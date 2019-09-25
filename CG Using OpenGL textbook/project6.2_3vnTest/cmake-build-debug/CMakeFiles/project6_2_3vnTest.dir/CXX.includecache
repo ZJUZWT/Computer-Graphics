@@ -6,17 +6,21 @@
 
 #IncludeRegexTransform: 
 
-F:/project/project6.2_3vnTest/SDL.cpp
-SDL.h
-F:/project/project6.2_3vnTest/SDL.h
-iostream
--
-fstream
--
-
-F:/project/project6.2_3vnTest/SDL.h
+F:/project/cg using opengl/project6.2_3vnTest/SDL.h
 cstdio
 -
 GL/gl.h
 -
+
+F:/project/cg using opengl/project6.2_3vnTest/main.cpp
+GL/freeglut.h
+-
+cstdio
+-
+cmath
+-
+ctime
+-
+SDL.h
+F:/project/cg using opengl/project6.2_3vnTest/SDL.h
 

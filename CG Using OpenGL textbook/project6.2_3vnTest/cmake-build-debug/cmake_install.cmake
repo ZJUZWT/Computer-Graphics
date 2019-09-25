@@ -1,4 +1,4 @@
-# Install script for directory: F:/project/project6.2_3vnTest
+# Install script for directory: F:/project/cg using opengl/project6.2_3vnTest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "F:/project/project6.2_3vnTest/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "F:/project/cg using opengl/project6.2_3vnTest/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

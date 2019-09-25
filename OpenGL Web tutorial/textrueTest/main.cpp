@@ -8,8 +8,8 @@
 #include "init.h"
 #include "Shader.h"
 
-const int W = 756 ;
-const int H = 756 ;
+const int W = 1920 ;
+const int H = 1080 ;
 
 void framebuffer_size_callback(GLFWwindow *window,int width,int height) ;
 

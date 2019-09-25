@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "F:/project/project6.2_3vnTest/SDL.cpp" "F:/project/project6.2_3vnTest/cmake-build-debug/CMakeFiles/project6_2_3vnTest.dir/SDL.cpp.obj"
-  "F:/project/project6.2_3vnTest/main.cpp" "F:/project/project6.2_3vnTest/cmake-build-debug/CMakeFiles/project6_2_3vnTest.dir/main.cpp.obj"
+  "F:/project/cg using opengl/project6.2_3vnTest/SDL.cpp" "F:/project/cg using opengl/project6.2_3vnTest/cmake-build-debug/CMakeFiles/project6_2_3vnTest.dir/SDL.cpp.obj"
+  "F:/project/cg using opengl/project6.2_3vnTest/main.cpp" "F:/project/cg using opengl/project6.2_3vnTest/cmake-build-debug/CMakeFiles/project6_2_3vnTest.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

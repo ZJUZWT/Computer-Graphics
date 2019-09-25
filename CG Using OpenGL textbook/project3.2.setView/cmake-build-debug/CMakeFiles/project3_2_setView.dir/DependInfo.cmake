@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "F:/project/project3.2.setView/main.cpp" "F:/project/project3.2.setView/cmake-build-debug/CMakeFiles/project3_2_setView.dir/main.cpp.obj"
+  "F:/project/cg using opengl/project3.2.setView/main.cpp" "F:/project/cg using opengl/project3.2.setView/cmake-build-debug/CMakeFiles/project3_2_setView.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-F:/project/project3.2.setView/main.cpp
+F:/project/cg using opengl/project3.2.setView/main.cpp
 GL/glut.h
 -
 cmath
 -
 cstdio
+-
+iostream
 -
 

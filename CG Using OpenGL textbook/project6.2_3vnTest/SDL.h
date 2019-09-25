@@ -43,15 +43,29 @@ private:
     int numFaces ;
     Face *face ;
     void readFile(const char *fileName) ;
+    void readFunc(const char *fileName) ;
+    void drawFile(int mode) ;
+    void drawFunc(int mode) ;
 
 public:
-    Mesh(const char *fileName) {
+    Mesh(const char *fileName,int mode) {
         numVerts = 0 ; numNorms = 0 ; numFaces = 0 ;
         pt = nullptr ; norm = nullptr ; face = nullptr ;
-        readFile(fileName) ;
+        switch (mode) {
+            case 1 :{
+                readFile(fileName) ;
+                break ;
+            }
+            case 2 :{
+                readFunc(fileName) ;
+                break ;
+            }
+            default:
+                break ;
+        }
     } ;
     ~Mesh() { delete[] pt ; delete[] norm ; delete[] face ; numFaces = 0 ; numNorms = 0 ; numVerts = 0 ; }
-    void draw() ;
+    void draw(int drawMode,int objectMode) ;
 } ;
 
 #endif

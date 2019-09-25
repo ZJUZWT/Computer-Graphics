@@ -1,15 +1,21 @@
 #include <GL/glut.h>
 #include <cmath>
 #include <cstdio>
+#include <iostream>
 
 const GLdouble pi = 3.1415926 ;
-const GLint W = 512 ;
-const GLint H = 512 ;
+const GLint W = 756 ;
+const GLint H = 756 ;
 
-GLdouble leftBorder = -5.0 ;
+struct Point {
+    double x ;
+    double y ;
+} point[20000];
+
+GLdouble leftBorder = -50.0 ;
 GLdouble bottomBorder = -0.5 ;
-GLdouble dLRBorder = 10.0 ;
-GLdouble dUDBorder = 2.0 ;
+GLdouble dLRBorder = 100.0 ;
+GLdouble dUDBorder = 1.0 ;
 GLdouble offsetBorder = 0.03 ;
 const GLdouble zoomFactor = 1.2 ;
 
@@ -26,8 +32,21 @@ void setWindow(GLdouble left,GLdouble right,GLdouble bottom,GLdouble top) {
 //    setViewport(W/2,W,H/2,H) ;
 }
 
+//GLdouble f(GLdouble x) {
+//    return sin(pi*x)/pi/x ;
+//}
+
+const GLdouble a = 0.03 ;
+const GLdouble z = 100 ;
+GLdouble sinc(GLdouble x) {
+    if ( x == 0 ) return 1 ;
+    return sin(x)/x ;
+}
+
 GLdouble f(GLdouble x) {
-    return sin(pi*x)/pi/x ;
+    GLdouble k = 4*a*a/z*sinc(2*a/z*x);
+    GLdouble theta = pi/z*(x*x) ;
+    return k*cos(theta) ;
 }
 
 void drawLine(GLdouble x1,GLdouble y1,GLdouble x2,GLdouble y2) {
@@ -39,22 +58,20 @@ void drawLine(GLdouble x1,GLdouble y1,GLdouble x2,GLdouble y2) {
 
 void myDisplay() {
     glClear(GL_COLOR_BUFFER_BIT) ;
-
-    for ( int i = 0 ; i < 2 ; i++ ) {
-        for ( int j = 0 ; j < 2 ; j++ ) {
-            glViewport( W/2*i , H/2*j , W/2 , H/2 ) ;
-            //    glMatrixMode(GL_MODELVIEW) ;
-            //    glLoadIdentity() ;
-            glBegin(GL_LINE_STRIP);
-            for (GLdouble x = leftBorder; x <= leftBorder + dLRBorder; x += 0.01) {
-                if (x == 0.0) glVertex2f(0.0, 1.0); else glVertex2f(x, f(x));
-                //        if ( fabs(x - (GLint)x) < 1e-4 )
-            }
-            glEnd() ;
-            drawLine(0,bottomBorder,0,bottomBorder+dUDBorder) ;
-            drawLine(leftBorder,0,leftBorder+dLRBorder,0) ;
-        }
+    glViewport( 0 , 0 , W , H ) ;
+    glBegin(GL_LINE_STRIP);
+    for (GLdouble x = leftBorder; x <= leftBorder + dLRBorder; x += 0.01) {
+        if (x == 0.0) glVertex2f(0.0, 1.0); else glVertex2f(x, 10000*f(x));
+//        if (x == 0.0) glVertex2f(0.0, 1.0); else glVertex2f(x, sinc(x));
     }
+
+    glEnd() ;
+    drawLine(0,-10,0,300) ;
+    drawLine(-100,0,101000,0) ;
+
+    drawLine(0,bottomBorder,0,bottomBorder+dUDBorder) ;
+    drawLine(leftBorder,0,leftBorder+dLRBorder,0) ;
+
     glFlush() ;
 }
 
@@ -116,9 +133,10 @@ int main(int argc,char**argv) {
 
     myInit() ;
     setWindow(leftBorder,leftBorder+dLRBorder,bottomBorder,bottomBorder+dUDBorder) ;
+//    setWindow(-10,105.00,-10,360) ;
 //    setViewport(W/2,W,H/2,H) ;
 //    setWindow(leftBorder*2,(leftBorder+dLRBorder)*2,(bottomBorder)*2,(bottomBorder+dUDBorder)*2) ;
-//    setViewport(0,W,0,H) ;
+    setViewport(0,W,0,H) ;
 
     glutMainLoop() ;
     return 0 ;

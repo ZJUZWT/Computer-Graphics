@@ -13,13 +13,16 @@ const GLdouble blue[3] = {0.0,0.0,1.0};
 const GLdouble radii = 18 ;
 GLdouble x = 0 , t = 0 , direction = 1 ;
 
-static Mesh model = Mesh("F:/project/project6.2_3vnTest/dome1.3vn") ;
+static Mesh model = Mesh("../dome1.3vn",1) ;
+static Mesh function = Mesh("../function.3vn",2) ;
 
 void myDisplay() ;
 void myIdle() ;
 void myInit() ;
 void setWindow(GLdouble left,GLdouble right,GLdouble bottom,GLdouble top,GLdouble near_val,GLdouble far_val)  ;
 void setViewport(GLint left,GLint right,GLint bottom,GLint top) ;
+void drawXYZ() ;
+void drawLine(GLdouble x1,GLdouble y1,GLdouble z1,GLdouble x2,GLdouble y2,GLdouble z2) ;
 
 void initCT() ;
 void initLight() ;
@@ -34,7 +37,7 @@ int main(int argc,char**argv) {
     myInit() ;
 
     glutDisplayFunc(&myDisplay) ;
-    glutIdleFunc(&myIdle) ;
+//    glutIdleFunc(&myIdle) ;
     glutMainLoop() ;
     return 0;
 }
@@ -43,9 +46,34 @@ void myDisplay() {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT) ;
     glPushMatrix() ;
 
-    model.draw() ;
+    gluLookAt(1.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0) ;
+//    gluLookAt(0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,-1.0) ;
+    drawXYZ() ;
+
+    glColor3f(black[0],black[1],black[2]) ;
+    glPointSize(5.0) ;
+    glLineWidth(1.0) ;
+    function.draw(GL_LINE_LOOP,2) ;
+//    glLineWidth(3.0) ;
+//    function.draw(GL_LINE_LOOP,2) ;
     glutSwapBuffers() ;
     glPopMatrix() ;
+}
+void drawLine(GLdouble x1,GLdouble y1,GLdouble z1,GLdouble x2,GLdouble y2,GLdouble z2) {
+    glBegin(GL_LINES) ;
+    glVertex3f(x1,y1,z1) ;
+    glVertex3f(x2,y2,z2) ;
+    glEnd() ;
+}
+
+void drawXYZ() {
+    glLineWidth(3.0) ;
+    glColor3f(1.0,0.0,0.0) ;
+    drawLine(1000,0,0,-1000,0,0) ;
+    glColor3f(0.0,1.0,0.0) ;
+    drawLine(0,1000,0,0,-1000,0) ;
+    glColor3f(0.0,0.0,1.0) ;
+    drawLine(0,0,1000,0,0,-1000) ;
 }
 
 void myIdle() {
@@ -74,17 +102,14 @@ void setViewport(GLint left,GLint right,GLint bottom,GLint top) {
 }
 
 void myInit() {
-    initLight() ;
+//    initLight() ;
     glClearColor(1.0,1.0,1.0,1.0) ;
-    glColor3f(black[0],black[1],black[2]) ;
-    glPointSize(5.0) ;
-    glLineWidth(1.0) ;
-//    setWindow(-100,100,0,100,-100,100) ;
+    setWindow(-100,100,-100,100,-100,100) ;
     setViewport(0,W,0,H) ;
     initCT() ;
 
-    glTranslated(0.0,-0.5,0.0) ;
-    glScaled(0.03,0.03,0.03) ;
+    glTranslated(0.0,0.0,0.0) ;
+    glScaled(1,1,1) ;
 //    gluLookAt(0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0) ;
 
 //    glPushMatrix() ;
@@ -117,7 +142,7 @@ void initLight() {
     glMaterialfv(GL_FRONT,GL_SHININESS,mat_shininess);
     // set the light source properties
     GLfloat lightIntensity[] = {0.7f, 0.7f, 0.7f, 1.0f};
-    GLfloat light_position[] = {0.0f, 0.0f, -1.0f, 0.0f};
+    GLfloat light_position[] = {0.0f, 1.0f, 0.0f, 0.0f};
     glLightfv(GL_LIGHT0, GL_POSITION, light_position);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, lightIntensity);
 
